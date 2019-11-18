@@ -37,7 +37,7 @@ def remove_display_attributes(cloud):
     # bug #1645783.
     defined = cloud.pop('defined')
     assert_equal(defined, 'local')
-    description = cloud.pop('description', None)
+    description = cloud.pop('description', "")
     # Pop Nones, which are "errors from parsing the yaml"
     # E.g. output can show values which we show to the customers but should actually not parsed and compared
     for key in cloud.keys():
